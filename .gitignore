@@ -1,0 +1,22 @@
+# Ignore directories and files related to dependencies
+vendor/
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore database files and backups
+*.sql
+db_data/
+
+# Ignore Docker-specific override files
+docker-compose.override.yml
+
+# Ignore system-specific files
+.DS_Store
+
+# Ignore any temporary files
+*.tmp
+*.bak
+*.swp
+

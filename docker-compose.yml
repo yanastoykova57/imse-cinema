@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: cinema_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cinema_db
+      MYSQL_USER: cinema_user
+      MYSQL_PASSWORD: userpassword
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sources/sql/:/docker-entrypoint-initdb.d/
+    networks:
+      - cinema_network
+
+  php:
+    build:
+      context: ./sources/php/
+    volumes:
+    - ./sources/php/:/var/www/html/
+    container_name: cinema_php
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - cinema_network
+
+  java:
+    build:
+      context: ./sources/java/
+    container_name: cinema_java
+    depends_on:
+      - db
+    networks:
+      - cinema_network
+
+networks:
+  cinema_network:
+
+volumes:
+  db_data:
