@@ -1,8 +1,8 @@
-<?php
+<!---<div?php
 
-require_once('DatabaseHelper.php');
+#require_once('DatabaseHelper.php');
 
-$database = new DatabaseHelper();
+#$database = new DatabaseHelper();
 
 //
 /*
@@ -12,7 +12,7 @@ try {
     echo "error importing cinemas " . $e->getMessage();
 }
 */
-?>
+?>--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +21,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
     <script src="scripts.js" defer></script>
-    <title>DBS Project</title>
+    <title>Cinema Project</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -84,11 +84,20 @@ body {
 </style>
 
 <body>
+    <div class="container-center text-center">
+        <form action="trigger_import.php" method="POST">
+            <button type="submit" class="btn btn-primary btn-lg mt-3">
+                Import Data 
+            </button>
+        </form>
+    </div>    
+</body>
+<!---<body>
     <br>
 
     <div class="container container-center">
         <div class="row mb-3">
-            <!-- Add Cinema -->
+            <!-- Add Cinema 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white melon mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addCinema.php" class="card-header headerstyling text-center"> ADD CINEMA</a>
@@ -97,7 +106,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Add Employee -->
+            <!-- Add Employee 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white khaki mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addMitarbeiter.php" class="card-header headerstyling text-center"> ADD EMPLOYEE</a>
@@ -106,7 +115,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Add Client -->
+            <!-- Add Client 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white cambridge_blue mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addClient.php" class="card-header headerstyling text-center"> ADD CLIENT</a>
@@ -117,7 +126,7 @@ body {
             </div>
         </div>
         <div class="row mb-3">
-            <!-- Add Product -->
+            <!-- Add Product 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white khaki mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addProduct.php" class="card-header headerstyling text-center"> ADD PRODUCT</a>
@@ -127,7 +136,7 @@ body {
                 </div>
             </div>
 
-            <!-- Add Purchase -->
+            <!-- Add Purchase 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white cambridge_blue mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addPurchase.php" class="card-header headerstyling text-center"> ADD PURCHASE</a>
@@ -136,7 +145,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Add Payment -->
+            <!-- Add Payment 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white melon mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addPayment.php" class="card-header headerstyling text-center"> ADD PAYMENT</a>
@@ -147,7 +156,7 @@ body {
             </div>
         </div>
         <div class="row mb-3">
-            <!-- Add Sells -->
+            <!-- Add Sells 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white cambridge_blue mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="addSells.php" class="card-header headerstyling text-center"> ADD SELLS</a>
@@ -156,7 +165,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Delete Employee -->
+            <!-- Delete Employee
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white khaki mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="delMitarbeiter.php" class="card-header headerstyling text-center"> DELETE EMPLOYEE</a>
@@ -165,7 +174,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Delete Payment -->
+            <!-- Delete Payment 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white melon mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="delPayment.php" class="card-header headerstyling text-center"> DELETE PAYMENT</a>
@@ -176,7 +185,7 @@ body {
             </div>
         </div>
         <div class="row mb-3">
-            <!-- Search Employees -->
+            <!-- Search Employees 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white khaki mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="searchEmployees.php" class="card-header headerstyling text-center">SEARCH EMPLOYEES</a>
@@ -185,7 +194,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Search Client -->
+            <!-- Search Client 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white melon mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="searchClient.php" class="card-header headerstyling text-center">SEARCH CLIENT</a>
@@ -194,7 +203,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Search Purchase -->
+            <!-- Search Purchase 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white cambridge_blue mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="searchPurchase.php" class="card-header headerstyling text-center">SEARCH PURCHASE</a>
@@ -205,7 +214,7 @@ body {
             </div>
         </div>
         <div class="row mb-3">
-            <!-- Update Salary -->
+            <!-- Update Salary 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white melon mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="updateSalary.php" class="card-header headerstyling text-center">UPDATE SALARY</a>
@@ -214,7 +223,7 @@ body {
                     </div>
                 </div>
             </div>
-            <!-- Update PhoneNr -->
+            <!-- Update PhoneNr 
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card text-white khaki mb-3 d-flex flex-column h-100 w-100" style="max-width: 18rem;">
                     <a href="updateCPhoneNr.php" class="card-header headerstyling text-center">UPDATE PHONE NUMBER</a>

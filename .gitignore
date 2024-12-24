@@ -6,7 +6,6 @@ node_modules/
 *.log
 
 # Ignore database files and backups
-*.sql
 db_data/
 
 # Ignore Docker-specific override files
