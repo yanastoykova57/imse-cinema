@@ -90,6 +90,7 @@ body {
                 Import Data 
             </button>
         </form>
+        <a href="use_case_2.php" class="btn btn-success btn-lg mt-3"> Use Case 2 </a>
     </div>    
 </body>
 <!---<body>

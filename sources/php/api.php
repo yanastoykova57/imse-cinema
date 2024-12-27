@@ -26,6 +26,8 @@ try {
         include 'snackLogic.php';
     } else if (strpos($requestURI,"api.php/sales") !== false) {
         include 'saleLogic.php';
+    } else if (strpos($requestURI,"api.php/products_on_sale") !== false) {
+        include 'useCase2Logic.php';
     } else {
         http_response_code(404);
         echo json_encode(["err"=> "Endpoint not found!"]);
